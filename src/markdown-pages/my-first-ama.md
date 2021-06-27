@@ -9,10 +9,10 @@ description: "Redux Tutorial"
 > Redux Toolkit is an excellent package for an easier, cleaner, faster way to learn about Redux without all of the verbose boilerplate configuration code. Lets keep it simple and go over Redux toolkit, specfically designed to include everything we need in our Redux project.
 
 I have made this tutorial in a codesandbox which I will link at the end for you to see the final project.
-Lets begin by opening a new React-App in your favorite IDE or codesandbox.
-open your commandline
-cd into your project's root folder
-then type in the commandline
+Lets begin by opening a new React-App in your favorite IDE or codesandbox.<br>
+open your commandline<br>
+cd into your project's root folder<br>
+then type in the commandline<br>
 `npm install @reduxjs/toolkit react-redux`
 
 <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/DXJO3AraeMQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
