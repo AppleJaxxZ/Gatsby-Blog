@@ -1,6 +1,7 @@
 ---
 title: "The beginning of the blog."
 date: "2021-06-09"
+description: "My first blog post"
 ---
 
 ### Hey everyone, this is my first blog post after completing this gastsby blog project. It was a really fun challenge learning how to use Gatsby Js and Graphql to make this.
