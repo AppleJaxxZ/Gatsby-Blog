@@ -23,11 +23,6 @@ Boom. Wait, thats all we need? YEP! No need to have to install reselect by it's 
 
 ### Ok, now lets set up our redux store.
 
-https://i.ibb.co/3BtC6Fq/create-Slice.png
-
-https://i.ibb.co/DQ4Q5CF/feature-counter-JS.png
-https://i.ibb.co/55cS8zM/finished-Redux.png
-
 In your root folder, (the same folder that holds app.js and index.js) create a new file called "store.js" Store holds the reducers we'll be making and distributes them to our app. <br>
 At the top of store.js type `import { configureStore } from '@reduxjs/toolkit'`<br>
 
@@ -58,5 +53,37 @@ A few key points to remember are `createSlice` is just taking a bunch of ingredi
 
 Next we want to create our counterSlice variable and counterSlice.actions. Ill show you what it looks like first, then ill explain whats going on. <br>
 ![createSlice](https://i.ibb.co/3BtC6Fq/create-Slice.png "imported createSlice and set up our state, reducers and actions..") <br>
+
+Ok, a lot of new things going on im sure. So lets break it down...all were doing here is creating an object. Inside this object we set up our states name which is `counter` , its initial state...which we decided would be a `value` of `0`, and created our reducers. The first reducer we made passes state into it, takes that state's current value and adds 1 to it. Hence the `state.value += 1`. <br>
+Then we moved along to the `decrement` same thing here...but this time it's `state.value -= 1` this reducer function takes 1 away now every time is called. <b.vr>
+and lastly we have `incrementByAmount` here were doing somthing a little different but not much....we took our `state.value += action.payload`. <br>
+
+### Wait, what is this action.payload?
+
+Im going to be explaining action.payload and how we use it in the next redux tutorial post. So for now, Get a fair grasp on what is happening in our reducers at this time. Notice how we set our initial state value and how we create these reducers which tell our state how to change and respond. <br>
+
+If you have ever used react-redux before you'll notice that we didn't have to first spread our state first. That's because redux toolkit uses the "immer library" which detects changes to a "draft state" which produces a new mutable state based off those changes.
+
+### Lastly in our counterSlice.js file at the bottom there is `export const { increment, decrement, incrementByAmount } = slice.actions`
+
+Here we've destructed each reducer name off slice.actions. This export is going to allow us to use our slice reducers in our next file which will enable us to render a state change after the user clicks increment or decrement. <br>
+Finally just `export default counterSlice.reducer` at the bottom so we can add our newly created slice to our redux store.
+
+### Now navigate back to our store.js
+
+Go ahead and import our counterReducer ...`import counterReducer from './features/counter/counterSlice.js'` then simply add our state name "counter" and its reducer inside the configureStore . Store.Js should now look like this....<br>
+![Add reducer to store](https://i.ibb.co/ZXd4ptL/sliceto-Store.png "imported counterReducer and aded counter: counterReducer to our store.") <br>
+
+### After updating our redux store...we can now use React Redux hooks to let React Components interact with the store. `useSelector` will read data from the store,
+
+`useDispatch` will dispatch the actions.
+
+### Create a nea w file inside of your counter folder inside features. src/features/counter/Counter.js Create functional component called `Counter` and export it at the bottom of the file. Then import it in App.js and render the component inside <App>.
+
+Doing this is going to allow us to see the App begin rendering in real time.<br>
+This is what the file will look like when it's done. Ill explain everything inside of our Counter component after you look at the example so you can get a visual of what is happening.  
+![Counter Feature](https://i.ibb.co/DQ4Q5CF/feature-counter-JS.png"This is how we'll be passing our global state and rendering increments and decrements.") <br>
+
+https://i.ibb.co/55cS8zM/finished-Redux.png
 
 <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/DXJO3AraeMQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
