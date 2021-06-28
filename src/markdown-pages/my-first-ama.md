@@ -56,6 +56,7 @@ A few key points to remember are `createSlice` is just taking a bunch of ingredi
 
 ### Lets start this file out by tying `import { createSlice } from '@reduxjs/toolkit'`
 
-Next we want to create our slice. so type
+Next we want to create our counterSlice variable and counterSlice.actions. Ill show you what it looks like first, then ill explain whats going on. <br>
+![createSlice](https://i.ibb.co/3BtC6Fq/create-Slice.png "imported createSlice and set up our state, reducers and actions..") <br>
 
 <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/DXJO3AraeMQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
