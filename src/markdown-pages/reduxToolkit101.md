@@ -1,6 +1,6 @@
 ---
 title: "Blog Entry Two-Redux ToolKit Tutorial"
-date: "06-26-2021"
+date: "2021-06-29"
 description: "Redux Tutorial"
 ---
 
