@@ -56,7 +56,7 @@ Next we want to create our counterSlice variable and counterSlice.actions. Ill s
 
 Ok, a lot of new things going on im sure. So lets break it down...all were doing here is creating an object. Inside this object we set up our states name which is `counter` , its initial state...which we decided would be a `value` of `0`, and created our reducers. The first reducer we made passes state into it, takes that state's current value and adds 1 to it. Hence the `state.value += 1`. <br>
 Then we moved along to the `decrement` same thing here...but this time it's `state.value -= 1` this reducer function takes 1 away now every time is called. <b.vr>
-and lastly we have `incrementByAmount` here were doing somthing a little different but not much....we took our `state.value += action.payload`. <br>
+and lastly we have `incrementByAmount` here were doing something a little different but not much....we took our `state.value += action.payload`. <br>
 
 ### Wait, what is this action.payload?
 
@@ -90,13 +90,17 @@ This is what the file will look like when it's done. Ill explain everything insi
 `const count = useSelector((state) => state.counter.value)` and <br> `const dispatch = useDispatch()`<br>
 First we set count as our variable equal to useSelector hook which grabs the state from our counterSlice.js file. The state we want to grab is the counter's value. Which we set to start at 0. Now count will represent our state at all times. The value dispatch is set to useDispatch() which allows us to dispatch our reducers into action whenever we tell it to. <br>
 
-`onClick={() => dispatch(increment())}` Look! We used an onClick listener to wait for a button click....on the click it then dispatches the reducer "increment()" to do it's job which was updating our state +1. state.value += 1 remember? And below increment you can see decrement doing the same thing! <br>
+`onClick={() => dispatch(increment())}` Look! We used an onClick listener to wait for a button click....on the click it then dispatches the reducer "increment()" to do it's job which was updating our state.value += 1 remember? And below increment you can see decrement doing the same thing! <br>
 
 After you type the rest out like we did above you'll be able to render your state changes immediately in browser window. Go ahead and type `npm start` play with the buttons. Open your react-redux dev tools and watch how each action is dispatching it's reducer's actions to update the state! <br>
 
-Your output should look somthing like this....<br>
+Your output should look something like this....<br>
 
 ![Output](https://i.ibb.co/55cS8zM/finished-Redux.png "Code finalized and rendered on your browser window..") <br>
+
+### Heres A Link To A CodeSandBox Version
+
+![CodeSandBox](https://codesandbox.io/s/simple-reduxtoolkit-example-forked-3n1s9?file=/src/App.js "CodeSandBox Version") <br>
 
 ### Thats it! Before you go, think about how easy it is to pass our state through our app now. Yes there is a little setup but in the long run it saves us a lot of time, debugging, errors, and prop tunneling. With a redux global state you' re free to send your state across your App without complications, intensely thought out state flow planning or slowing your app down by passing state through components that wont even be using that state. <br>
 
