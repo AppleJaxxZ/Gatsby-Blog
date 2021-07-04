@@ -19,7 +19,9 @@ export default ({ data }) => {
     <Layout>
       <Seo title="Home" />
       <div>
-        <h1>AppleJaxxZ's Thoughts</h1>
+        <h1>
+          Level Up - A Guide To Truly Learning React's Concepts And Syntax
+        </h1>
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
